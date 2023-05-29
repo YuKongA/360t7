@@ -70,7 +70,12 @@ ip -6 r add default via `ip -6 route | grep "default from" | awk 'NR==1{print $5
 net.ipv6.conf.wan.accept_ra=2
 ```
 
-- 6.完成以上步骤后重启即可。
+- 6.使用终端输入 `vi /etc/config/firewall` ，在 `config zone`(wan 口) 配置项添加下方内容保存，
+```
+option masq6 '1'
+```
+
+- 7.完成以上步骤后重启即可。
 
 <b> 使用 nftables 请建议尽量移除 iptables 以保障兼容性，安装依赖相关功能的软件包时也注意使用 nftables 方案，例如 OpenClash。</b>
 
