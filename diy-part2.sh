@@ -8,5 +8,8 @@
 # Blog: https://p3terx.com
 #============================================================
 
-sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+
+# Modify distribution description
 sed -i "s/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION='%D(%C) By YuKongA'/g" package/base-files/files/etc/openwrt_release
